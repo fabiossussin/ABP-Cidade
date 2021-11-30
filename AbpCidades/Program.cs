@@ -11,11 +11,7 @@ namespace AbpCidades
             Console.WriteLine("Bem Vindo!");
             var loop = true;
 
-            var tree = new Tree(new City("Caxias", "rs", "", "", 50));
-            tree.Insert(new City("bage", "sp", "", "", 100));
-            tree.Insert(new City("recife", "rj", "", "", 150));
-            tree.Insert(new City("sao", "rj", "", "", 150));
-            tree.Insert(new City("florianopolis", "rj", "", "", 150));
+            var tree = new Tree();
             while (loop)
             {
                 Console.WriteLine("");
@@ -186,6 +182,7 @@ namespace AbpCidades
             public Node Root;
             public void Insert(City value) => Insert(null, value);
 
+            public Tree() { }
             public Tree(City value) => Root = new Node(value);
 
             public Node DeleteCity(Node root, string key)
